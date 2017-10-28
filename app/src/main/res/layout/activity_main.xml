@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/darker_gray"
+    tools:context="com.melih.braintrainer.MainActivity">
+
+    <RelativeLayout
+        android:layout_width="304dp"
+        android:layout_height="437dp"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="8dp">
+
+        <TextView
+            android:id="@+id/counter"
+            android:layout_width="101dp"
+            android:layout_height="47dp"
+            android:layout_marginLeft="16dp"
+            android:text="30s"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:visibility="invisible"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:id="@+id/question"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="100dp"
+            android:text="Question"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:visibility="invisible"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_below="@+id/counter"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="14dp"
+            android:layout_below="@+id/question"
+            android:layout_alignParentStart="true">
+
+            <Button
+                android:id="@+id/button1"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_above="@+id/startButton"
+                android:layout_toStartOf="@+id/Result"
+                android:layout_weight="1"
+                android:background="@android:color/holo_red_dark"
+                android:onClick="checkAnswer"
+                android:tag="1"
+                android:text="Button"
+                android:textColor="@android:color/white"
+                android:textSize="24sp"
+                android:visibility="invisible"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/button2"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_alignBaseline="@+id/button1"
+                android:layout_alignBottom="@+id/button1"
+                android:layout_alignEnd="@+id/answers"
+                android:layout_weight="1"
+                android:background="@android:color/holo_green_dark"
+                android:onClick="checkAnswer"
+                android:tag="2"
+                android:text="Button"
+                android:textColor="@android:color/white"
+                android:textSize="24sp"
+                android:visibility="invisible"
+                app:layout_constraintHorizontal_bias="0.541"
+                app:layout_constraintLeft_toRightOf="@+id/button1"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/linearLayout"
+            android:layout_centerHorizontal="true"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/button4"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_above="@+id/Result"
+                android:layout_alignEnd="@+id/answers"
+                android:layout_weight="1"
+                android:background="#ffa13d"
+                android:onClick="checkAnswer"
+                android:tag="4"
+                android:text="Button"
+                android:textColor="@android:color/white"
+                android:textSize="24sp"
+                android:visibility="invisible"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintLeft_toRightOf="@+id/button3"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/button2" />
+
+            <Button
+                android:id="@+id/button3"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_above="@+id/Result"
+                android:layout_toStartOf="@+id/button4"
+                android:layout_weight="1"
+                android:background="@color/colorPrimary"
+                android:onClick="checkAnswer"
+                android:tag="3"
+                android:text="Button"
+                android:textColor="@android:color/white"
+                android:textSize="24sp"
+                android:visibility="invisible"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/button1" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/Result"
+            android:layout_width="303dp"
+            android:layout_height="56dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:text="Result"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.507"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0"
+            android:layout_alignParentBottom="true"
+            android:layout_alignStart="@+id/button2" />
+
+        <TextView
+            android:id="@+id/answers"
+            android:layout_width="101dp"
+            android:layout_height="47dp"
+            android:layout_marginRight="16dp"
+            android:text="0/0"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:visibility="invisible"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true" />
+
+        <Button
+            android:id="@+id/startButton"
+            android:layout_width="196dp"
+            android:layout_height="154dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:background="#ffa13d"
+            android:onClick="startButton"
+            android:text="Start"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            android:textSize="36sp"
+            android:textStyle="bold"
+            android:visibility="visible"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>
